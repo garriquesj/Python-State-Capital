@@ -151,3 +151,62 @@ states = [
     "name": "Wyoming",
     "capital": "Cheyenne"
 }]
+
+
+
+# test=[
+# {
+#     "name": "West Virginia",
+#     "capital": "Charleston"
+# }, {
+#     "name": "Wisconsin",
+#     "capital": "Madison"
+# }, {
+#     "name": "Wyoming",
+#     "capital": "Cheyenne"
+# }]
+
+# _____________________
+#    WELCOME TO GAME
+start_text ="Welcome to the States Capital Game"
+print(start_text)
+# _____________________
+    #  VARIABLES
+
+
+# function to handle game logic
+def play_game():
+
+    import random
+    #_____variables______
+    random.shuffle(states)
+    random_state =states[0]["name"]
+    random_capital =states[0]["capital"]
+    score = 0
+    incorrect = 0
+    print(random_capital, random_state)
+    # _____________________
+    #      LOOP
+    for i in (states):
+        question = input(i["capital"] + " is the capital of which state???")
+    
+        if question == i["name"]:
+            score += 1
+            print(f"Yes correct {score}")
+            # print(score)
+            # print(score)
+        else:
+            incorrect += 1
+            print(f"Sorry that was wrong {incorrect} ")
+    print("GameOver PRESS Y TO PLAY AGAIN")
+    play_again= input()
+    if play_again.casefold() == "y":
+        play_game()
+play_game()
+
+
+# print(test.capital)
+# x = test.get("capital")
+# print(x)
+
+# question1 = input(f"Which state does state is {random.shuffle(test.capital)} in?: ")
