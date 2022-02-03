@@ -192,16 +192,20 @@ def play_game():
     
         if question == i["name"]:
             score += 1
-            print(f"Yes correct {score}")
+            print(f"That was correct your current score is {score}")
             # print(score)
-            # print(score)
+            
         else:
             incorrect += 1
-            print(f"Sorry that was wrong {incorrect} ")
-    print("GameOver PRESS Y TO PLAY AGAIN")
+            print(f"Sorry that was wrong {incorrect}  wrong so far")
+            print(f"The answer was " + i["name"])
+    print(f"GameOver, you got {score} correct and {incorrect} incorrect")
+    print(f"----PRESS Y TO PLAY AGAIN----")
     play_again= input()
     if play_again.casefold() == "y":
         play_game()
+    else:
+        print('THANK YOU FOR PLAYING!!')
 play_game()
 
 
